@@ -182,6 +182,15 @@ p <- ggplot(
   geom_line(data = prediction_data, aes(colour = model), size = 2, alpha = .75)
 p
 
+models_summary
+library(ggfortify)
+autoplot(models[[1]]$model) # Awful
+autoplot(models[[2]]$model) # Scary
+autoplot(models[[3]]$model) # Very bad
+autoplot(models[[4]]$model) # Not too bad
+# №4 is the best
+# We need train/test split
+
 mod <- lm(log10(n_clicks) ~ log10(n_impressions), ads)
 summary(mod)
 glance(mod)

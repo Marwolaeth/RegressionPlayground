@@ -8,6 +8,7 @@ required_packages <- c(
   'broom',
   'ggplot2',
   'GGally',
+  'ggfortify',
   # Additional regression functions
   'glmnet',
   'infer',
