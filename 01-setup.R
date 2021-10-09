@@ -17,5 +17,11 @@ required_packages <- c(
   'olsrr'
 )
 (missing_packages <- setdiff(required_packages, installed.packages()))
-if (length(missing_packages)) install.packages(missing_packages)
+if (length(missing_packages)) {
+  install.packages(
+    missing_packages,
+    type = 'source',
+    INSTALL_opts = '--byte-compile'
+  )
+}
 rm(required_packages, missing_packages)
