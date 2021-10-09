@@ -16,6 +16,17 @@ ggpairs(
   )
 )
 
+ads %>%
+  mutate(across(everything(), list(log10 = log10))) %>%
+  ggpairs(
+    upper = list(
+      continuous = wrap(cor_heatmap, cor_min = min(cor(.)))
+    ),
+    lower = list(
+      continuous = wrap('smooth_loess', colour = 'red4')
+    )
+  )
+
 ############# Clicks vs. spent ====
 ggplot(
   ads,
