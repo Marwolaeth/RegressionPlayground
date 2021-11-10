@@ -8,9 +8,12 @@ fn_dumb <- function(x) 4*sin(x) + (x-4)^2
 qplot(x, y, geom = 'line')
 
 optim(par = c(x = 0), fn_dumb)
+optim(par = c(x = 0), fn_dumb, method = 'BFGS')
 optimise(fn_dumb, interval = c(-100, 100))
 (x_min <- x[which.min(y)])
 fn_dumb(x_min)
+fn_dumb(4.473414)
+fn_dumb(4.473409)
 
 #### Least Squares Optimisation ####
 df <- read_fst('data/taiwan_real_estate2.fst')
